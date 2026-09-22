@@ -1,4 +1,4 @@
-Time,Date,Day of the week,CarCount,BikeCount,BusCount,TruckCount,Total,Trafic Indicator,Traffic Situation
+Time,Date,Day of the week,CarCount,BikeCount,BusCount,TruckCount,Total,Traffic Indicator,Traffic Situation
 12:00:00 AM,10,Tuesday,13,2,2,24,41,normal,tidak macet
 12:15:00 AM,10,Tuesday,14,1,1,36,52,normal,tidak macet
 12:30:00 AM,10,Tuesday,10,2,2,32,46,normal,tidak macet
