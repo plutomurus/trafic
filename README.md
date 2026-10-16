@@ -259,52 +259,6 @@ Model yang sudah dilatih dipakai untuk memprediksi data baru.
 
 ---
 
-## ⚠️ Keterbatasan
-
-Poin berikut penting untuk menafsirkan hasil secara jujur:
-
-1. **Masalah disederhanakan menjadi 2 kelas ekstrem.** Kelas `low` dan `high` dibuang, sehingga model hanya membedakan kondisi yang relatif jelas berbeda. Akurasi 97,73% tidak boleh dianggap berlaku untuk semua tingkat kepadatan.
-2. **Evaluasi memakai satu kali split** (70:30, `random_state=42`). Belum ada cross-validation, sehingga variasi performa belum diketahui.
-3. **Belum ada model pembanding (baseline).** Tanpa pembanding seperti Logistic Regression atau Decision Tree, belum bisa dikatakan Random Forest adalah pilihan terbaik.
-4. **Label kemungkinan berkaitan erat dengan jumlah kendaraan.** Korelasi `CarCount` dengan target yang tinggi (0,83) menunjukkan model sebagian besar mempelajari hubungan jumlah kendaraan dengan label. Cara dataset memberi label perlu diverifikasi pada dokumentasi sumbernya.
-5. **Korelasi negatif `TruckCount` (-0,67)** belum dijelaskan penyebabnya. Ini bisa berupa pola data atau artefak dataset, dan tidak otomatis berarti truk mengurangi kemacetan.
-6. **Hasil dari satu dataset publik.** Belum diuji pada data lalu lintas lokal Indonesia, padahal latar belakang proyek menyebut kota-kota Indonesia.
-7. **Ini klasifikasi kondisi saat ini**, bukan peramalan (*forecasting*) kemacetan di masa depan.
-8. **Rumusan masalah ke-2** (faktor yang memengaruhi kemacetan) baru dijawab lewat korelasi. Analisis *feature importance* dari model belum disajikan.
-
----
-
-## 🔭 Pengembangan Selanjutnya
-
-- [ ] Menambahkan analisis *feature importance* Random Forest
-- [ ] Cross-validation dan *hyperparameter tuning*
-- [ ] Membandingkan dengan algoritma lain (Logistic Regression, Decision Tree, XGBoost)
-- [ ] Memakai keempat kelas (`low`, `normal`, `heavy`, `high`)
-- [ ] Menguji pada data lalu lintas lokal
-- [ ] Membuat antarmuka sederhana (misalnya Streamlit) untuk inferensi
-
----
-
-## 🚀 Cara Menjalankan
-
-> Sesuaikan nama file dengan isi repositori kalian.
-
-```bash
-# 1. Clone repository
-git clone https://github.com/[username]/[nama-repo].git
-cd [nama-repo]
-
-# 2. Install dependensi
-pip install pandas numpy scikit-learn matplotlib seaborn
-
-# 3. Letakkan dataset hasil unduhan Kaggle di folder data/
-
-# 4. Jalankan notebook / skrip
-jupyter notebook [nama-notebook].ipynb
-```
-
----
-
 <div align="center">
 
 **Kelompok 11 · Proyek Machine Learning**
