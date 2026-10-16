@@ -12,7 +12,6 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 ![Model](https://img.shields.io/badge/Model-Random%20Forest-2E8B57?style=flat-square)
-![Accuracy](https://img.shields.io/badge/Akurasi%20Uji-97.73%25-brightgreen?style=flat-square)
 
 </div>
 
