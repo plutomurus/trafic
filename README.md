@@ -33,8 +33,6 @@
 - [Pelatihan Model](#-pelatihan-model)
 - [Hasil Evaluasi](#-hasil-evaluasi)
 - [Inferensi (Contoh Penggunaan)](#-inferensi-contoh-penggunaan)
-- [Keterbatasan](#-keterbatasan)
-- [Pengembangan Selanjutnya](#-pengembangan-selanjutnya)
 - [Cara Menjalankan](#-cara-menjalankan)
 
 ---
