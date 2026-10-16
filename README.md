@@ -13,6 +13,9 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 ![Model](https://img.shields.io/badge/Model-Random%20Forest-2E8B57?style=flat-square)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cavB6SdvfMdXHPEV6wXdiBXgK8iAeJ4h?usp=sharing)
+[![Dataset Kaggle](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/hasibullahaman/traffic-prediction-dataset?select=Traffic.csv)
+
 </div>
 
 ---
@@ -44,7 +47,8 @@ Proyek **Machine Learning** ini membangun model klasifikasi untuk menentukan apa
 |-------|-----------|
 | Jenis tugas | Klasifikasi biner |
 | Algoritma | Random Forest Classifier (100 pohon) |
-| Dataset | Traffic Prediction Dataset (Kaggle) |
+| Dataset | [Traffic Prediction Dataset (Kaggle)](https://www.kaggle.com/datasets/hasibullahaman/traffic-prediction-dataset?select=Traffic.csv) |
+| Notebook | [Google Colab](https://colab.research.google.com/drive/1cavB6SdvfMdXHPEV6wXdiBXgK8iAeJ4h?usp=sharing) |
 | Hasil utama | Akurasi **97,73%** pada 660 data uji |
 
 ---
@@ -117,7 +121,7 @@ Membangun model machine learning yang mengklasifikasikan kepadatan lalu lintas k
 
 ## 📊 Dataset
 
-**Sumber:** *Traffic Prediction Dataset* (Kaggle). Tautan: `[tambahkan URL dataset]`
+**Sumber:** [*Traffic Prediction Dataset* di Kaggle](https://www.kaggle.com/datasets/hasibullahaman/traffic-prediction-dataset?select=Traffic.csv) (file yang dipakai: `Traffic.csv`).
 
 | Informasi | Nilai |
 |-----------|:-----:|
@@ -270,6 +274,18 @@ Model yang sudah dilatih dipakai untuk memprediksi data baru.
 
 ## 🚀 Cara Menjalankan
 
+### Opsi 1: Google Colab (paling mudah)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cavB6SdvfMdXHPEV6wXdiBXgK8iAeJ4h?usp=sharing)
+
+1. Buka notebook melalui tombol di atas.
+2. Pastikan file `Traffic.csv` tersedia. Unduh dari [Kaggle](https://www.kaggle.com/datasets/hasibullahaman/traffic-prediction-dataset?select=Traffic.csv) lalu unggah ke sesi Colab, kecuali notebook sudah memuatnya otomatis.
+3. Jalankan seluruh sel secara berurutan (`Runtime` → `Run all`).
+
+> Pastikan akses berbagi notebook diatur ke "Siapa saja yang memiliki link" agar bisa dibuka dosen dan pembaca lain.
+
+### Opsi 2: Jalankan lokal
+
 > Sesuaikan nama file dengan isi repositori kalian.
 
 ```bash
@@ -280,9 +296,9 @@ cd [nama-repo]
 # 2. Install dependensi
 pip install pandas numpy scikit-learn matplotlib seaborn
 
-# 3. Letakkan dataset hasil unduhan Kaggle di folder data/
+# 3. Letakkan Traffic.csv (dari Kaggle) di folder data/
 
-# 4. Jalankan notebook / skrip
+# 4. Jalankan notebook
 jupyter notebook [nama-notebook].ipynb
 ```
 
