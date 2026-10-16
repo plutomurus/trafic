@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sustainable_Development_Goal_11.png" alt="SDG 11 - Sustainable Cities and Communities" width="160"/>
+
 # 🚦 Klasifikasi Tingkat Kemacetan Lalu Lintas
 
 ### Berdasarkan Jumlah dan Jenis Kendaraan Menggunakan Machine Learning (Random Forest)
@@ -65,6 +67,14 @@ Proyek **Machine Learning** ini membangun model klasifikasi untuk menentukan apa
 ---
 
 ## 🌍 Keterkaitan dengan SDG 11
+
+<div align="center">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sustainable_Development_Goal_11.png" alt="SDG 11 - Sustainable Cities and Communities" width="220"/>
+
+*Ikon SDG © United Nations, digunakan untuk keperluan edukasi.*
+
+</div>
 
 **SDG 11: Kota dan Pemukiman yang Berkelanjutan.**
 
@@ -256,6 +266,26 @@ Model yang sudah dilatih dipakai untuk memprediksi data baru.
 | Day of the week | Monday |
 
 **Hasil klasifikasi: `heavy`** 🔴
+
+---
+
+## 🚀 Cara Menjalankan
+
+> Sesuaikan nama file dengan isi repositori kalian.
+
+```bash
+# 1. Clone repository
+git clone https://github.com/[username]/[nama-repo].git
+cd [nama-repo]
+
+# 2. Install dependensi
+pip install pandas numpy scikit-learn matplotlib seaborn
+
+# 3. Letakkan dataset hasil unduhan Kaggle di folder data/
+
+# 4. Jalankan notebook / skrip
+jupyter notebook [nama-notebook].ipynb
+```
 
 ---
 
