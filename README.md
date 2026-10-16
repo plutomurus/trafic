@@ -1,16 +1,16 @@
 <div align="center">
 
-# 🏙️ [JUDUL PROYEK AI ANDA]
+# 🚦 Klasifikasi Tingkat Kemacetan Lalu Lintas
 
-### Solusi Kecerdasan Buatan untuk Kota dan Pemukiman yang Berkelanjutan
+### Berdasarkan Jumlah dan Jenis Kendaraan Menggunakan Machine Learning (Random Forest)
 
-![SDG 11](https://img.shields.io/badge/SDG-11-F99D26?style=for-the-badge)
+![SDG 11](https://img.shields.io/badge/SDG-11%20Kota%20%26%20Pemukiman%20Berkelanjutan-F99D26?style=for-the-badge)
 ![Kelompok](https://img.shields.io/badge/Kelompok-11-0A66C2?style=for-the-badge)
-![Mata Kuliah](https://img.shields.io/badge/Tugas-Kecerdasan%20Buatan-8A2BE2?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge)
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![Model](https://img.shields.io/badge/Model-Random%20Forest-2E8B57?style=flat-square)
+![Accuracy](https://img.shields.io/badge/Akurasi%20Uji-97.73%25-brightgreen?style=flat-square)
 
 </div>
 
@@ -21,25 +21,30 @@
 - [Tentang Proyek](#-tentang-proyek)
 - [Anggota Kelompok](#-anggota-kelompok)
 - [Keterkaitan dengan SDG 11](#-keterkaitan-dengan-sdg-11)
-- [Latar Belakang Masalah](#-latar-belakang-masalah)
-- [Tujuan](#-tujuan)
-- [Metode dan Teknologi](#-metode-dan-teknologi)
-- [Arsitektur Sistem](#-arsitektur-sistem)
-- [Struktur Folder](#-struktur-folder)
-- [Instalasi dan Cara Menjalankan](#-instalasi-dan-cara-menjalankan)
+- [Latar Belakang dan Masalah](#-latar-belakang-dan-masalah)
+- [Rumusan Masalah dan Tujuan](#-rumusan-masalah-dan-tujuan)
 - [Dataset](#-dataset)
-- [Hasil dan Evaluasi](#-hasil-dan-evaluasi)
+- [Alur Kerja](#-alur-kerja)
+- [Preprocessing](#-preprocessing)
+- [Pelatihan Model](#-pelatihan-model)
+- [Hasil Evaluasi](#-hasil-evaluasi)
+- [Inferensi (Contoh Penggunaan)](#-inferensi-contoh-penggunaan)
 - [Keterbatasan](#-keterbatasan)
 - [Pengembangan Selanjutnya](#-pengembangan-selanjutnya)
-- [Referensi](#-referensi)
+- [Cara Menjalankan](#-cara-menjalankan)
 
 ---
 
 ## 📌 Tentang Proyek
 
-> **[Tuliskan 2–3 kalimat yang menjelaskan apa yang dilakukan sistem AI ini, siapa penggunanya, dan masalah konkret apa yang diselesaikan.]**
+Proyek **Machine Learning** ini membangun model klasifikasi untuk menentukan apakah kondisi lalu lintas berada pada tingkat **Normal (lancar)** atau **Heavy (padat/macet)**, berdasarkan jumlah dan jenis kendaraan (mobil, sepeda motor, bus, truk), jam, dan hari pencatatan.
 
-Proyek ini dibuat untuk memenuhi tugas mata kuliah **Kecerdasan Buatan** dengan mengangkat tema **SDG 11: Kota dan Pemukiman yang Berkelanjutan**.
+| Aspek | Keterangan |
+|-------|-----------|
+| Jenis tugas | Klasifikasi biner |
+| Algoritma | Random Forest Classifier (100 pohon) |
+| Dataset | Traffic Prediction Dataset (Kaggle) |
+| Hasil utama | Akurasi **97,73%** pada 660 data uji |
 
 ---
 
@@ -57,166 +62,252 @@ Proyek ini dibuat untuk memenuhi tugas mata kuliah **Kecerdasan Buatan** dengan 
 
 </div>
 
-**Pembagian peran** *(sesuaikan dengan kontribusi sebenarnya)*:
-
-| Nama | Kontribusi |
-|------|-----------|
-| Muh. Arsyaf Nawir | [contoh: pengumpulan data & preprocessing] |
-| Muh. Fahri Fairuz Ramadhan | [contoh: pembuatan dan pelatihan model] |
-| Adinda Rizky Wulandari | [contoh: evaluasi, dokumentasi, dan laporan] |
-
 ---
 
 ## 🌍 Keterkaitan dengan SDG 11
 
-**SDG 11 — Kota dan Pemukiman yang Berkelanjutan** bertujuan menjadikan kota dan permukiman inklusif, aman, tangguh, dan berkelanjutan.
+**SDG 11: Kota dan Pemukiman yang Berkelanjutan.**
 
-Proyek ini berkontribusi pada target berikut:
+Proyek ini berkaitan secara tidak langsung dengan:
 
-| Target SDG 11 | Kaitan dengan Proyek |
-|---------------|----------------------|
-| `[mis. 11.2 Transportasi berkelanjutan]` | [jelaskan secara spesifik] |
-| `[mis. 11.6 Dampak lingkungan kota, kualitas udara & sampah]` | [jelaskan secara spesifik] |
-| `[mis. 11.5 Pengurangan dampak bencana]` | [jelaskan secara spesifik] |
+| Target | Kaitan |
+|--------|--------|
+| **11.2** Sistem transportasi yang aman, terjangkau, dan berkelanjutan | Identifikasi kondisi padat membantu rekayasa lalu lintas dan pengaturan lampu lalu lintas adaptif |
+| **11.6** Mengurangi dampak lingkungan kota (termasuk kualitas udara) | Kemacetan meningkatkan konsumsi bahan bakar dan emisi kendaraan, sehingga deteksi dini dapat menjadi dasar mitigasi |
 
-> ⚠️ Pilih **satu atau dua** target yang benar-benar relevan. Mengklaim terlalu banyak target tanpa bukti justru melemahkan proyek.
-
----
-
-## ❗ Latar Belakang Masalah
-
-[Jelaskan masalah nyata yang diangkat. Gunakan data dengan sumber yang jelas (BPS, KLHK, Kementerian PUPR, WHO, atau jurnal). Jangan mencantumkan angka tanpa sumber.]
+> Catatan: kontribusinya bersifat pendukung keputusan. Proyek ini belum mengukur pengurangan emisi atau waktu tempuh secara langsung.
 
 ---
 
-## 🎯 Tujuan
+## ❗ Latar Belakang dan Masalah
 
-1. [Tujuan utama, mis. membangun model AI untuk ...]
-2. [Tujuan kedua, mis. mengevaluasi akurasi model dengan metrik ...]
-3. [Tujuan ketiga, mis. menyajikan hasil dalam bentuk antarmuka sederhana]
+Kemacetan merupakan tantangan utama kota-kota besar di Indonesia. Dampaknya meliputi pemborosan waktu, naiknya konsumsi bahan bakar, dan meningkatnya emisi kendaraan. Tingkat kepadatan jalan dipengaruhi oleh volume dan komposisi kendaraan (mobil, motor, bus, truk) pada rentang waktu tertentu.
 
----
-
-## 🛠️ Metode dan Teknologi
-
-| Kategori | Detail |
-|----------|--------|
-| Jenis pendekatan AI | [mis. Machine Learning / Deep Learning / Search / Fuzzy / NLP] |
-| Algoritma | [mis. Random Forest, CNN, A*, K-Means] |
-| Bahasa | Python |
-| Library | [mis. pandas, scikit-learn, TensorFlow, matplotlib] |
-| Tools | [mis. Google Colab, VS Code, Git] |
+**Masalah yang diselesaikan:** petugas dan sistem pengelola lalu lintas sulit menentukan ruas jalan atau rentang waktu yang berpotensi padat hanya dari data jumlah dan jenis kendaraan. Akibatnya, rekayasa lalu lintas, pengaturan durasi lampu adaptif, dan peringatan dini menjadi lambat dan kurang tepat sasaran.
 
 ---
 
-## 🧩 Arsitektur Sistem
+## 🎯 Rumusan Masalah dan Tujuan
+
+**Rumusan masalah**
+
+1. Bagaimana memprediksi kemacetan lalu lintas menggunakan algoritma Random Forest?
+2. Faktor apa saja yang memengaruhi terjadinya kemacetan lalu lintas?
+3. Seberapa akurat model Random Forest dalam memprediksi kemacetan lalu lintas?
+
+**Tujuan**
+
+Membangun model machine learning yang mengklasifikasikan kepadatan lalu lintas ke dalam 2 kelas berdasarkan jumlah dan jenis kendaraan.
+
+| Kelas | Label | Arti |
+|:-----:|-------|------|
+| `0` | Normal | Lalu lintas lancar |
+| `1` | Heavy | Lalu lintas padat/macet |
+
+---
+
+## 📊 Dataset
+
+**Sumber:** *Traffic Prediction Dataset* (Kaggle). Tautan: `[tambahkan URL dataset]`
+
+| Informasi | Nilai |
+|-----------|:-----:|
+| Baris data asli | 5.952 |
+| Fitur input utama | 6 |
+| Sampel yang dipakai | 2.200 (seimbang) |
+| Kelas normal | 1.100 |
+| Kelas heavy | 1.100 |
+
+**Variabel dalam dataset**
+
+| Variabel | Deskripsi | Peran |
+|----------|-----------|-------|
+| `Time` | Waktu pencatatan | Fitur |
+| `Date` | Tanggal data diinputkan | Di-drop |
+| `Day of the week` | Hari saat data direkam | Fitur |
+| `CarCount` | Jumlah mobil | Fitur |
+| `BikeCount` | Jumlah sepeda motor | Fitur |
+| `BusCount` | Jumlah bus | Fitur |
+| `TruckCount` | Jumlah truk | Fitur |
+| `Total` | Total seluruh kendaraan | Di-drop (cegah data leakage) |
+| `Traffic Situation` | Label tingkat kepadatan | Target |
+
+**Penerapan variabel target:** hanya dua kategori bawaan dataset yang dipakai, yaitu `normal` dan `heavy`. Kategori `low` dan `high` **tidak digunakan**. Masing-masing kelas diambil 1.100 baris secara acak.
+
+---
+
+## 🧭 Alur Kerja
 
 ```mermaid
 flowchart LR
-    A[Pengumpulan Data] --> B[Preprocessing]
-    B --> C[Pelatihan / Pemodelan]
-    C --> D[Evaluasi]
-    D --> E[Output / Prediksi]
-```
-
-> Ganti diagram di atas agar sesuai dengan alur sistem Anda yang sebenarnya.
-
----
-
-## 📂 Struktur Folder
-
-```text
-.
-├── data/              # dataset mentah dan hasil olahan
-├── notebooks/         # notebook eksperimen
-├── src/               # source code utama
-├── models/            # model tersimpan
-├── results/           # grafik dan hasil evaluasi
-├── requirements.txt
-└── README.md
+    A[Dataset Kaggle<br/>5.952 baris] --> B[Ambil 1.100 normal<br/>+ 1.100 heavy]
+    B --> C[Encoding<br/>Time & Day of the week]
+    C --> D[Heatmap Korelasi]
+    D --> E[Pisahkan X dan y<br/>Drop Total, Date, Traffic Situation]
+    E --> F[Split 70:30<br/>stratified]
+    F --> G[Random Forest<br/>100 pohon]
+    G --> H[Evaluasi<br/>Confusion Matrix]
+    H --> I[Inferensi<br/>data baru]
 ```
 
 ---
 
-## 🚀 Instalasi dan Cara Menjalankan
+## 🧹 Preprocessing
+
+### 1. Encoding data
+
+- Kolom `Time` (format teks/jam) dikonversi menjadi variabel numerik.
+- Kolom `Day of the week` di-encode dengan **one-hot encoding** (7 kolom hari).
+
+### 2. Analisis korelasi (heatmap)
+
+| Fitur | Korelasi dengan `Traffic Situation` | Interpretasi |
+|-------|:----------------------------------:|--------------|
+| `CarCount` | 0,83 | Positif kuat |
+| `BusCount` | 0,69 | Positif kuat |
+| `BikeCount` | 0,65 | Positif kuat |
+| `TruckCount` | -0,67 | Negatif |
+| `Time` | 0,07 | Lemah |
+| `Day of the week` | ≈ 0 | Sangat lemah |
+
+### 3. Pemisahan fitur (X) dan target (y)
+
+```python
+# Feature X
+drop_cols = ["Total", "Date", "Traffic Situation"]
+X = df.drop(columns=[c for c in drop_cols if c in df.columns]).copy()
+
+# Target y
+y = df["Traffic Situation"]
+```
+
+- **X:** 12 kolom, yaitu `Time`, `CarCount`, `BikeCount`, `BusCount`, `TruckCount`, dan 7 kolom hari hasil one-hot.
+- **y:** `Traffic Situation` (0 = normal, 1 = heavy).
+- Kolom `Total` di-drop untuk menghindari **data leakage** yang membuat akurasi tidak realistis (mendekati 100%).
+
+---
+
+## 🌲 Pelatihan Model
+
+**Pembagian data**
+
+| Set | Proporsi | Jumlah baris |
+|-----|:--------:|:------------:|
+| Train | 70% | 1.540 |
+| Test | 30% | 660 |
+
+```python
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42, stratify=y
+)
+```
+
+**Random Forest:** gabungan 100 pohon keputusan yang dilatih pada sampel data acak berbeda. Prediksi akhir ditentukan lewat voting seluruh pohon sehingga hasilnya lebih stabil.
+
+```python
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+```
+
+---
+
+## 📈 Hasil Evaluasi
+
+<div align="center">
+
+### Akurasi data uji: **97,73%** (645 dari 660 benar)
+
+</div>
+
+| Kelas | Precision | Recall | F1-Score | Support |
+|-------|:---------:|:------:|:--------:|:-------:|
+| normal (0) | 0,98 | 0,97 | 0,98 | 330 |
+| heavy (1) | 0,97 | 0,98 | 0,98 | 330 |
+| **Accuracy** | | | **0,98** | **660** |
+
+**Confusion matrix**
+
+| | Prediksi normal | Prediksi heavy |
+|---|:---:|:---:|
+| **Aktual normal** | 320 | 10 (false positive) |
+| **Aktual heavy** | 5 (false negative) | 325 |
+
+- 10 data normal salah diprediksi heavy.
+- 5 data heavy salah diprediksi normal.
+
+<!-- Tambahkan gambar jika sudah diekspor:
+![Confusion Matrix](results/confusion_matrix.png)
+![Heatmap Korelasi](results/heatmap.png)
+-->
+
+---
+
+## 🔮 Inferensi (Contoh Penggunaan)
+
+Model yang sudah dilatih dipakai untuk memprediksi data baru.
+
+| Input | Nilai |
+|-------|:-----:|
+| Time (jam, 0-23) | 17 |
+| CarCount | 140 |
+| BikeCount | 20 |
+| BusCount | 40 |
+| TruckCount | 50 |
+| Day of the week | Monday |
+
+**Hasil klasifikasi: `heavy`** 🔴
+
+---
+
+## ⚠️ Keterbatasan
+
+Poin berikut penting untuk menafsirkan hasil secara jujur:
+
+1. **Masalah disederhanakan menjadi 2 kelas ekstrem.** Kelas `low` dan `high` dibuang, sehingga model hanya membedakan kondisi yang relatif jelas berbeda. Akurasi 97,73% tidak boleh dianggap berlaku untuk semua tingkat kepadatan.
+2. **Evaluasi memakai satu kali split** (70:30, `random_state=42`). Belum ada cross-validation, sehingga variasi performa belum diketahui.
+3. **Belum ada model pembanding (baseline).** Tanpa pembanding seperti Logistic Regression atau Decision Tree, belum bisa dikatakan Random Forest adalah pilihan terbaik.
+4. **Label kemungkinan berkaitan erat dengan jumlah kendaraan.** Korelasi `CarCount` dengan target yang tinggi (0,83) menunjukkan model sebagian besar mempelajari hubungan jumlah kendaraan dengan label. Cara dataset memberi label perlu diverifikasi pada dokumentasi sumbernya.
+5. **Korelasi negatif `TruckCount` (-0,67)** belum dijelaskan penyebabnya. Ini bisa berupa pola data atau artefak dataset, dan tidak otomatis berarti truk mengurangi kemacetan.
+6. **Hasil dari satu dataset publik.** Belum diuji pada data lalu lintas lokal Indonesia, padahal latar belakang proyek menyebut kota-kota Indonesia.
+7. **Ini klasifikasi kondisi saat ini**, bukan peramalan (*forecasting*) kemacetan di masa depan.
+8. **Rumusan masalah ke-2** (faktor yang memengaruhi kemacetan) baru dijawab lewat korelasi. Analisis *feature importance* dari model belum disajikan.
+
+---
+
+## 🔭 Pengembangan Selanjutnya
+
+- [ ] Menambahkan analisis *feature importance* Random Forest
+- [ ] Cross-validation dan *hyperparameter tuning*
+- [ ] Membandingkan dengan algoritma lain (Logistic Regression, Decision Tree, XGBoost)
+- [ ] Memakai keempat kelas (`low`, `normal`, `heavy`, `high`)
+- [ ] Menguji pada data lalu lintas lokal
+- [ ] Membuat antarmuka sederhana (misalnya Streamlit) untuk inferensi
+
+---
+
+## 🚀 Cara Menjalankan
+
+> Sesuaikan nama file dengan isi repositori kalian.
 
 ```bash
 # 1. Clone repository
 git clone https://github.com/[username]/[nama-repo].git
 cd [nama-repo]
 
-# 2. (Opsional) Buat virtual environment
-python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
+# 2. Install dependensi
+pip install pandas numpy scikit-learn matplotlib seaborn
 
-# 3. Install dependensi
-pip install -r requirements.txt
+# 3. Letakkan dataset hasil unduhan Kaggle di folder data/
 
-# 4. Jalankan program
-python src/main.py
+# 4. Jalankan notebook / skrip
+jupyter notebook [nama-notebook].ipynb
 ```
-
----
-
-## 📊 Dataset
-
-| Atribut | Keterangan |
-|---------|------------|
-| Sumber | [nama sumber + tautan] |
-| Jumlah data | [isi] |
-| Fitur | [isi] |
-| Label / target | [isi] |
-| Lisensi | [isi] |
-
----
-
-## 📈 Hasil dan Evaluasi
-
-| Metrik | Nilai |
-|--------|:-----:|
-| Akurasi | [isi] |
-| Precision | [isi] |
-| Recall | [isi] |
-| F1-Score | [isi] |
-
-**Temuan utama:** [ringkas 2–3 poin hasil yang benar-benar didukung data].
-
-<!-- Tambahkan gambar hasil:
-![Hasil](results/hasil.png)
--->
-
----
-
-## ⚠️ Keterbatasan
-
-Bagian ini penting untuk kredibilitas. Contoh yang perlu dipertimbangkan:
-
-- Ukuran dan kualitas dataset
-- Risiko overfitting
-- Cakupan geografis data
-- Asumsi yang dipakai dan belum diuji
-
----
-
-## 🔭 Pengembangan Selanjutnya
-
-- [ ] [Rencana 1]
-- [ ] [Rencana 2]
-- [ ] [Rencana 3]
-
----
-
-## 📚 Referensi
-
-1. United Nations. *Sustainable Development Goal 11: Make cities and human settlements inclusive, safe, resilient and sustainable.* https://sdgs.un.org/goals/goal11
-2. [Tambahkan referensi lain yang benar-benar Anda gunakan]
 
 ---
 
 <div align="center">
 
-**Kelompok 11 · SDG 11 Kota dan Pemukiman yang Berkelanjutan**
-
-*Dibuat untuk tugas Kecerdasan Buatan*
+**Kelompok 11 · Proyek Machine Learning**
+*SDG 11: Kota dan Pemukiman yang Berkelanjutan*
 
 </div>
